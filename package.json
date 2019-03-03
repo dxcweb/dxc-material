@@ -1,0 +1,39 @@
+{
+  "name": "dxc-material",
+  "version": "2.0.0",
+  "description": "audio",
+  "config": {
+    "port": 7201
+  },
+  "main": "./lib",
+  "scripts": {
+    "build": "rc-tools run build",
+    "start": "rc-tools run server --babel-runtime",
+    "css": "rc-tools run css",
+    "pub": "rc-tools run publish",
+    "dist": "rc-tools run compile && rc-tools run dist"
+  },
+  "devDependencies": {
+    "antd": "^3.13.2",
+    "rc-tools": "8.x",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "files": [
+    "assets",
+    "examples",
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "ali-oss": "^6.1.0",
+    "axios": "^0.18.0",
+    "dxc-flex": "^1.0.3",
+    "dxc-upload": "^1.0.3",
+    "fs-addcomponent": "^0.0.1",
+    "qiniu-js": "^2.5.3",
+    "rc-pagination": "^1.17.8",
+    "rc-tabs": "^9.6.0",
+    "spark-md5": "^3.0.0"
+  }
+}
