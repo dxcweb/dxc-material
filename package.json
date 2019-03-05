@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "antd": "^3.13.2",
+    "dxc-loadjs": "^1.0.1",
     "rc-tools": "8.x",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
