@@ -11,7 +11,7 @@ const open = () => {
     addComponent.add(
       <Material
         onChange={(data) => {
-          onChange();
+          onChange(data);
         }}
         setOpenFun={(fun) => {
           openFun = fun;
