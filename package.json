@@ -32,8 +32,6 @@
     "dxc-upload": "^1.0.3",
     "fs-addcomponent": "^0.0.1",
     "qiniu-js": "^2.5.3",
-    "rc-pagination": "^1.17.8",
-    "rc-tabs": "^9.6.0",
     "spark-md5": "^3.0.0"
   }
 }

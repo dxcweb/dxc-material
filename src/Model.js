@@ -1,7 +1,6 @@
 import React from 'react';
 import Block from 'dxc-flex';
-import 'rc-tabs/assets/index.css';
-import 'rc-pagination/assets/index.css';
+
 
 export default class Model extends React.PureComponent {
   render() {
