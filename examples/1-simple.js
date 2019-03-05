@@ -1,13 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import material from "./getMaterial";
+import "./ApiAuth";
 import { netFetch } from "dxc-material";
+import { openMaterial, authSign } from "dxc-material";
+
 class Demo extends React.Component {
-  openMaterial = () => {
-    material().then((value) => {
-      console.log("value", value);
-    });
-  };
   onNetFetch = async () => {
     const apiRes = await netFetch([
       "https://xiumi.us/images/app/home/0cc68a.icon-paper-guide.png",
@@ -28,7 +25,7 @@ class Demo extends React.Component {
   render() {
     return (
       <div style={{ padding: 30, lineHeight: 2 }}>
-        <div onClick={this.openMaterial}>素材库</div>
+        <div onClick={openMaterial}>素材库</div>
         <div onClick={this.onNetFetch}>网络资源下载</div>
       </div>
     );

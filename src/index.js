@@ -1,5 +1,6 @@
-import createMaterial from "./addcomponent";
+import openMaterial from "./openMaterial";
 import netFetch from "./netFetch/netFetch";
 import catchremoteimage from "./netFetch/catchremoteimage";
+import authSign from "./authSign";
 
-export { createMaterial, netFetch, catchremoteimage };
+export { openMaterial, netFetch, catchremoteimage, authSign };

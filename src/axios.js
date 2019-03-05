@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getSign } from "./authSign";
 const instance = axios.create({
   // baseURL: "http://127.0.0.1:8080/my/yun-api",
   baseURL: "https://wop2.tuobacco.com/app/yun-api",
@@ -12,7 +13,7 @@ instance.interceptors.request.use(
       return Promise.reject("无效签名");
     }
     if (!sign) {
-      sign = await dxc_material_getSign();
+      sign = await getSign();
       window.localStorage.setItem(signKey, sign);
     }
     config.headers["Content-Log"] = sign;
