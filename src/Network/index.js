@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'antd/lib/Button';
+import Button from 'antd/lib/button';
 import NetworkModel from './NetworkModel';
 export default class Network extends React.PureComponent {
   state = {

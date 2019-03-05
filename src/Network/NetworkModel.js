@@ -1,7 +1,7 @@
 import React from 'react';
 import Model from '../Model';
 import Button from 'antd/lib/button';
-import Radio from 'antd/lib/Radio';
+import Radio from 'antd/lib/radio';
 import Block from 'dxc-flex';
 export default class NetworkModel extends React.PureComponent {
   aa = (ccc) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "antd/lib/Button";
+import Button from "antd/lib/button";
 import Upload from "dxc-upload";
 import uploadQiniu from "./uploadQiniu";
 
