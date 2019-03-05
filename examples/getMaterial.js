@@ -1,4 +1,4 @@
-import createMaterial from "dxc-material";
+import { createMaterial } from "dxc-material";
 import axios from "axios";
 
 const material = createMaterial(() => {
