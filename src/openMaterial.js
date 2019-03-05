@@ -4,11 +4,15 @@ import Material from "./Material";
 
 import addComponent from "fs-addcomponent";
 let openFun;
+let onChange = () => {};
 
-export default () => {
+const open = () => {
   if (!openFun) {
     addComponent.add(
       <Material
+        onChange={(data) => {
+          onChange();
+        }}
         setOpenFun={(fun) => {
           openFun = fun;
           openFun();
@@ -18,4 +22,12 @@ export default () => {
   } else {
     openFun();
   }
+};
+export default () => {
+  return new Promise((resolve, reject) => {
+    open();
+    onChange = (data) => {
+      resolve(data);
+    };
+  });
 };

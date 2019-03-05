@@ -32,7 +32,8 @@ export default class Material extends React.PureComponent {
     this.setState({ open: true });
   };
   onCancel = () => {
-    this.callback && this.callback(false);
+    const { onChange } = this.props;
+    onChange && onChange(false);
     this.setState({ open: false });
   };
   onConfirm = () => {
@@ -46,7 +47,8 @@ export default class Material extends React.PureComponent {
     } else {
       data.url = url;
     }
-    this.callback && this.callback(data);
+    const { onChange } = this.props;
+    onChange && onChange(data);
     this.setState({ open: false });
   };
   onChangeTabs = (activeKey) => {
