@@ -6,7 +6,7 @@ import addComponent from "fs-addcomponent";
 let openFun;
 let onChange = () => {};
 
-const open = () => {
+const open = (type) => {
   if (!openFun) {
     addComponent.add(
       <Material
@@ -15,17 +15,17 @@ const open = () => {
         }}
         setOpenFun={(fun) => {
           openFun = fun;
-          openFun();
+          openFun(type);
         }}
       />,
     );
   } else {
-    openFun();
+    openFun(type);
   }
 };
-export default () => {
+export default (type) => {
   return new Promise((resolve, reject) => {
-    open();
+    open(type);
     onChange = (data) => {
       resolve(data);
     };

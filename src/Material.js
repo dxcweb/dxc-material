@@ -28,8 +28,12 @@ export default class Material extends React.PureComponent {
     const { setOpenFun } = this.props;
     setOpenFun && setOpenFun(this.onOpen);
   }
-  onOpen = () => {
-    this.setState({ open: true });
+  onOpen = (activeKey) => {
+    const data = { open: true, chooseData: null };
+    if (activeKey) {
+      data.activeKey = activeKey;
+    }
+    this.setState(data);
   };
   onCancel = () => {
     const { onChange } = this.props;
@@ -74,7 +78,12 @@ export default class Material extends React.PureComponent {
     }
   };
   onChoose = (chooseData) => {
-    this.setState({ chooseData });
+    const oldData = this.state.chooseData;
+    if (oldData && oldData.id === chooseData.id) {
+      this.setState({ chooseData: null });
+    } else {
+      this.setState({ chooseData });
+    }
   };
   render() {
     const { open, activeKey, width, chooseData } = this.state;

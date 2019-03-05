@@ -3,19 +3,22 @@ import ReactDOM from "react-dom";
 import "./ApiAuth";
 import { netFetch } from "dxc-material";
 import { openMaterial, catchremoteimage } from "dxc-material";
-import loadjs from 'dxc-loadjs';
+import loadjs from "dxc-loadjs";
 class Demo extends React.Component {
-
   componentDidMount() {
     this.loadUeditor();
   }
+  openMaterial = async () => {
+    const data = await openMaterial("audio");
+    console.log(11, data);
+  };
   loadUeditor = async () => {
     if (!window.UE) {
-      const homeUrl = (window.UEDITOR_HOME_URL = 'https://code.tuobacco.com/ueditor/1-4-3-2/');
-      window.UEDITOR_DIALOGS_PATH = '';
+      const homeUrl = (window.UEDITOR_HOME_URL = "https://code.tuobacco.com/ueditor/1-4-3-2/");
+      window.UEDITOR_DIALOGS_PATH = "";
       await loadjs(`${homeUrl}ueditor.min.js`);
     }
-    this.ue = window.UE.getEditor('editor');
+    this.ue = window.UE.getEditor("editor");
     window.ue = this.ue;
     catchremoteimage(this.ue);
   };
@@ -39,7 +42,7 @@ class Demo extends React.Component {
   render() {
     return (
       <div style={{ padding: 30, lineHeight: 2 }}>
-        <div onClick={openMaterial}>素材库</div>
+        <div onClick={this.openMaterial}>素材库</div>
         <div onClick={this.onNetFetch}>网络资源下载</div>
 
         <script style={{ width: 400, maxWidth: "100%", height: 500 }} id="editor" type="text/plain" />
