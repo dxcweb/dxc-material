@@ -3414,7 +3414,7 @@ fresh@^0.5.2:
   version "0.5.2"
   resolved "http://registry.npm.taobao.org/fresh/download/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
 
-fs-addcomponent@^0.0.1:
+fs-addcomponent@0.0.1, fs-addcomponent@^0.0.1:
   version "0.0.1"
   resolved "http://registry.npm.taobao.org/fs-addcomponent/download/fs-addcomponent-0.0.1.tgz#5f109307c7ff1bf956fa43f57e75dd915cff0e84"
 
@@ -3425,6 +3425,19 @@ fs-extra@^0.16.5:
     graceful-fs "^3.0.5"
     jsonfile "^2.0.0"
     rimraf "^2.2.8"
+
+fs-flex@^0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/fs-flex/download/fs-flex-0.2.0.tgz#701086daff5d4348272a29bcbcb6b6bcbcfa1956"
+
+fs-loading@^0.2.8:
+  version "0.2.8"
+  resolved "http://registry.npm.taobao.org/fs-loading/download/fs-loading-0.2.8.tgz#42eb59658151badc787898d18ca7d7264e03e68d"
+  dependencies:
+    fs-addcomponent "0.0.1"
+    fs-flex "^0.2.0"
+    inobounce "^0.1.5"
+    nprogress "^0.2.0"
 
 fs-minipass@^1.2.5:
   version "1.2.5"
@@ -4225,6 +4238,10 @@ inherits@2.0.1:
 ini@^1.3.4, ini@~1.3.0:
   version "1.3.5"
   resolved "http://registry.npm.taobao.org/ini/download/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
+
+inobounce@^0.1.5:
+  version "0.1.6"
+  resolved "http://registry.npm.taobao.org/inobounce/download/inobounce-0.1.6.tgz#b3912e63cdb2eacbcbfcdce6a0681a105b49a8d2"
 
 inquirer@^3.0.6:
   version "3.3.0"
@@ -5714,6 +5731,10 @@ npmlog@^4.0.2:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/nprogress/download/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
 
 num2fraction@^1.2.2:
   version "1.2.2"
