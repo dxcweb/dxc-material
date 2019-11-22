@@ -44,7 +44,7 @@ export default class Material extends React.PureComponent {
     const { type, url } = this.state.chooseData;
     const data = { type };
     if (type === "image") {
-      data.url = url + "?imageMogr2/auto-orient";
+      data.url = url;
     } else if (type === "video") {
       data.url = url;
       data.poster = `${url}?vframe/jpg/offset/0`;

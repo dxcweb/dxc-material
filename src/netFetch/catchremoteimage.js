@@ -17,7 +17,7 @@ const getLocalUrl = async remote => {
 };
 
 const backgroundImage = async style => {
-  const bgIndex = style.indexOf('background-image') || style.indexOf('background');
+  const bgIndex = style.indexOf('background-image') || style.indexOf('background') || style.indexOf('-webkit-border-image') || style.indexOf('border-image');
   if (bgIndex >= 0) {
     const endInde = style.indexOf(';', bgIndex);
     if (endInde >= 0) {

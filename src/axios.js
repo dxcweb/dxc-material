@@ -16,7 +16,7 @@ instance.interceptors.request.use(
       sign = await getSign();
       window.localStorage.setItem(signKey, sign);
     }
-    config.headers["Content-Log"] = sign;
+    config.headers["Application-Log"] = sign;
     return config;
   },
   (error) => Promise.reject(error),
