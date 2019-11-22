@@ -17,7 +17,11 @@ const getLocalUrl = async remote => {
 };
 
 const backgroundImage = async style => {
-  const bgIndex = style.indexOf('background-image') || style.indexOf('background') || style.indexOf('-webkit-border-image') || style.indexOf('border-image');
+  let bgIndex = -1
+  if( style.indexOf('background-image')>=0) bgIndex= style.indexOf('background-image')
+  if( style.indexOf('background')>=0) bgIndex= style.indexOf('background')
+  if( style.indexOf('-webkit-border-image')>=0) bgIndex= style.indexOf('-webkit-border-image')
+  if( style.indexOf('border-image')>=0) bgIndex= style.indexOf('border-image')
   if (bgIndex >= 0) {
     const endInde = style.indexOf(';', bgIndex);
     if (endInde >= 0) {
@@ -42,6 +46,7 @@ const backgroundImage = async style => {
 const catchImage = async node => {
   if (node.type === 'element') {
     if (node.attrs && node.attrs.style) {
+      console.log(node.attrs.style)
       const newStyle = await backgroundImage(node.attrs.style);
       if (newStyle) {
         node.attrs.style = newStyle;
@@ -62,6 +67,7 @@ const catchImage = async node => {
 const handle = async (editor, node) => {
   loading.show();
   await catchImage(node);
+  console.log('node',node)
   editor.execCommand('insertHtml', node.toHtml(), true);
   loading.hide();
 };
