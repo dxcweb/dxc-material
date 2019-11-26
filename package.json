@@ -1,6 +1,6 @@
 {
   "name": "dxc-material",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "description": "素材库",
   "config": {
     "port": 7201

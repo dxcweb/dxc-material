@@ -3,7 +3,14 @@ import netFetch from "./netFetch";
 import loading from 'fs-loading';
 
 const getLocalUrl = async remote => {
-  const apiRes = await netFetch([remote]);
+  let url
+  if(remote.indexOf('//')){
+    url='http:'+remote
+  }else{
+    url=remote;
+  }
+  const formatUrl= new URL(url).href
+  const apiRes = await netFetch([formatUrl]);
   if (apiRes.status !== 200) {
     alert('请求错误');
     return;
