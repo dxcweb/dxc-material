@@ -28,7 +28,7 @@
   ],
   "dependencies": {
     "ali-oss": "^6.1.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dxc-flex": "^1.0.3",
     "dxc-upload": "^1.0.3",
     "fs-addcomponent": "^0.0.1",
