@@ -4,13 +4,14 @@ import "./ApiAuth";
 import { netFetch } from "dxc-material";
 import { openMaterial, catchremoteimage } from "dxc-material";
 import loadjs from "dxc-loadjs";
-class Demo extends React.Component {
+export default  class Demo extends React.Component {
   componentDidMount() {
     this.loadUeditor();
   }
   openMaterial = async () => {
-    const data = await openMaterial("audio");
-    console.log(11, data);
+    const data = await openMaterial("audio",{uploadLimit:(file)=>{
+      return true
+    }});
   };
   loadUeditor = async () => {
     if (!window.UE) {
@@ -37,17 +38,15 @@ class Demo extends React.Component {
       alert(msg);
       return;
     }
-    console.log(111, data);
   };
   render() {
     return (
       <div style={{ padding: 30, lineHeight: 2 }}>
         <div onClick={this.openMaterial}>素材库</div>
-        <div onClick={this.onNetFetch}>网络资源下载</div>
+        <div onClick={this.onNetFetch}>网络资源下载</div>
 
         <script style={{ width: 400, maxWidth: "100%", height: 500 }} id="editor" type="text/plain" />
       </div>
     );
   }
 }
-ReactDOM.render(<Demo />, document.getElementById("__react-content"));

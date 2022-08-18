@@ -22,7 +22,6 @@ async function uploadOss(file, asyncProgress) {
 
   const client = new OSS({ region, accessKeyId, accessKeySecret, stsToken, bucket });
   const body = "bucket=${bucket}&object=${object}&var1=${x:var1}";
-  console.log(body);
   const res = await client.multipartUpload(objectKey, file, {
     progress: asyncProgress,
     callback: {

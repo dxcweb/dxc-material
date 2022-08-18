@@ -4,7 +4,15 @@ import Upload from "dxc-upload";
 import uploadQiniu from "./uploadQiniu";
 
 export default class UploadBtn extends React.PureComponent {
-  onChange = files => {
+  onChange = async files => {
+    const file=files[0]
+    const {uploadLimit}=this.props
+    if(uploadLimit){
+     const res = await uploadLimit(file)
+     if(!res){
+      return;
+     }
+    }
     uploadQiniu(files[0], this.props.onChange);
   };
   render() {

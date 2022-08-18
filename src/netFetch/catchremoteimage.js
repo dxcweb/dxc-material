@@ -53,7 +53,6 @@ const backgroundImage = async style => {
 const catchImage = async node => {
   if (node.type === 'element') {
     if (node.attrs && node.attrs.style) {
-      console.log(node.attrs.style)
       const newStyle = await backgroundImage(node.attrs.style);
       if (newStyle) {
         node.attrs.style = newStyle;
@@ -74,7 +73,6 @@ const catchImage = async node => {
 const handle = async (editor, node) => {
   loading.show();
   await catchImage(node);
-  console.log('node',node)
   editor.execCommand('insertHtml', node.toHtml(), true);
   loading.hide();
 };

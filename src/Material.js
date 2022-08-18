@@ -90,6 +90,7 @@ export default class Material extends React.PureComponent {
     if (!open) {
       return null;
     }
+    const {uploadLimit}=this.props
 
     return (
       <Model>
@@ -100,7 +101,7 @@ export default class Material extends React.PureComponent {
           tabBarExtraContent={
             <Block vertical="center" style={{ height: 45, marginRight: 10, marginLeft: 10 }}>
               {/* <Network /> */}
-              <Upload onChange={this.onChangeUpload} />
+              <Upload uploadLimit={uploadLimit} onChange={this.onChangeUpload} />
             </Block>
           }
         >
